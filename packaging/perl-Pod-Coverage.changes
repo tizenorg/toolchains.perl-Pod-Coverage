@@ -1,0 +1,50 @@
+* Wed June 30 2010 Quanxian Wang <quanxian.wang@intel.com>  - 0.20-1
+- Add %doc before man file entry
+
+* Fri Feb 27 2009 Zhu Yanhai<yanhai.zhu@intel.com> - 0.20-1
+- Update to 0.20.
+
+* Wed Feb 27 2008 Tom "spot" Callaway <tcallawa@redhat.com> - 0.19-3
+- Rebuild for perl 5.10 (again), second pass with tests enabled
+
+* Wed Feb 27 2008 Tom "spot" Callaway <tcallawa@redhat.com> - 0.19-2
+- Rebuild for perl 5.10 (again), first pass without Test::Pod, tests
+
+* Sat Jan 12 2008 Steven Pritchard <steve@kspei.com> 0.19-1
+- Update to 0.19.
+- Use fixperms macro instead of our own chmod incantation.
+- Reformat to match cpanspec output.
+
+* Thu Jan 10 2007 Tom "spot" Callaway <tcallawa@redhat.com> - 0.18-3
+- rebuild 2, enable Test::Pod, tests
+
+* Thu Jan 10 2007 Tom "spot" Callaway <tcallawa@redhat.com> - 0.18-2.1
+- rebuild (first pass, no tests, no Test::Pod)
+
+* Wed Aug  9 2006 Jose Pedro Oliveira <jpo at di.uminho.pt> - 0.18-2
+- Version 0.18 is now a noarch package.
+
+* Wed Aug  9 2006 Jose Pedro Oliveira <jpo at di.uminho.pt> - 0.18-1
+- Update to 0.18.
+
+* Fri Feb 17 2006 Jose Pedro Oliveira <jpo at di.uminho.pt> - 0.17-5
+- Rebuild for FC5 (perl 5.8.8).
+
+* Thu May 12 2005 Jose Pedro Oliveira <jpo at di.uminho.pt> - 0.17-4
+- Add dist tag.
+
+* Wed Apr 20 2005 Jose Pedro Oliveira <jpo at di.uminho.pt> - 0.17-3
+- Avoid .packlist creation with Module::Build >= 0.2609.
+- Trust that %%{perl_vendorlib} is defined.
+
+* Fri Apr  7 2005 Michael Schwendt <mschwendt[AT]users.sf.net>
+- rebuilt
+
+* Sat Nov 27 2004 Jose Pedro Oliveira <jpo at di.uminho.pt> - 0:0.17-1
+- Update to 0.17.
+
+* Wed Oct 20 2004 Jose Pedro Oliveira <jpo at di.uminho.pt> - 0:0.16-0.fdr.1
+- Update to 0.16.
+
+* Thu May 20 2004 Jose Pedro Oliveira <jpo at di.uminho.pt> - 0:0.14-0.fdr.1
+- First build.
