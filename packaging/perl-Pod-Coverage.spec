@@ -7,6 +7,7 @@ License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/Pod-Coverage/
 Source0:        http://www.cpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-%{version}.tar.gz
+Source1001: packaging/perl-Pod-Coverage.manifest 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  perl(Devel::Symdump) >= 2.01
@@ -26,6 +27,7 @@ module is comprehensive.
 %setup -q -n Pod-Coverage-%{version}
 
 %build
+cp %{SOURCE1001} .
 %{__perl} Build.PL installdirs=vendor
 ./Build
 
@@ -44,6 +46,7 @@ find $RPM_BUILD_ROOT -depth -type d -exec rmdir {} 2>/dev/null \;
 rm -rf $RPM_BUILD_ROOT
 
 %files
+%manifest perl-Pod-Coverage.manifest
 %defattr(-,root,root,-)
 %doc Changes examples/
 %{_bindir}/*
