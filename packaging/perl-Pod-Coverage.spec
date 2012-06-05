@@ -6,9 +6,8 @@ Summary:        Checks if the documentation of a module is comprehensive
 License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/Pod-Coverage/
-Source0:        http://www.cpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 Source1001: packaging/perl-Pod-Coverage.manifest 
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 BuildRequires:  perl(Devel::Symdump) >= 2.01
 BuildRequires:  perl(Module::Build)
@@ -24,7 +23,7 @@ This module provides a mechanism for determining if the pod for a given
 module is comprehensive.
 
 %prep
-%setup -q -n Pod-Coverage-%{version}
+%setup -q 
 
 %build
 cp %{SOURCE1001} .
@@ -36,8 +35,6 @@ rm -rf $RPM_BUILD_ROOT
 
 ./Build install destdir=$RPM_BUILD_ROOT create_packlist=0
 find $RPM_BUILD_ROOT -depth -type d -exec rmdir {} 2>/dev/null \;
-
-#%{_fixperms} $RPM_BUILD_ROOT/*
 
 %check
 ./Build test
@@ -52,4 +49,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{perl_vendorlib}/*
 %doc %{_mandir}/man3/*
-
