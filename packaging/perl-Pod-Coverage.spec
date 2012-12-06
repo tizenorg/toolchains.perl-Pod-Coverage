@@ -7,8 +7,9 @@ License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/Pod-Coverage/
 Source0:        %{name}-%{version}.tar.gz
-Source1001: packaging/perl-Pod-Coverage.manifest 
+Source1001:     packaging/perl-Pod-Coverage.manifest 
 BuildArch:      noarch
+BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  perl(Devel::Symdump) >= 2.01
 BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(Test::Pod)
@@ -48,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes examples/
 %{_bindir}/*
 %{perl_vendorlib}/*
-%doc %{_mandir}/man3/*
+#%doc %{_mandir}/man3/*
