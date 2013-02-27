@@ -49,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes examples/
 %{_bindir}/*
 %{perl_vendorlib}/*
-#%doc %{_mandir}/man3/*
+%doc %{_mandir}/man3/*
