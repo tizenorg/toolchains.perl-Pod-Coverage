@@ -6,10 +6,9 @@ Summary:        Checks if the documentation of a module is comprehensive
 License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/Pod-Coverage/
-Source0:        %{name}-%{version}.tar.gz
-Source1001:     packaging/perl-Pod-Coverage.manifest 
+Source0:        http://www.cpan.org/authors/id/R/RC/RCLAMP/Pod-Coverage-%{version}.tar.gz
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
-BuildRequires:  perl(ExtUtils::MakeMaker)
 BuildRequires:  perl(Devel::Symdump) >= 2.01
 BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(Test::Pod)
@@ -24,10 +23,9 @@ This module provides a mechanism for determining if the pod for a given
 module is comprehensive.
 
 %prep
-%setup -q 
+%setup -q -n Pod-Coverage-%{version}
 
 %build
-cp %{SOURCE1001} .
 %{__perl} Build.PL installdirs=vendor
 ./Build
 
@@ -37,6 +35,8 @@ rm -rf $RPM_BUILD_ROOT
 ./Build install destdir=$RPM_BUILD_ROOT create_packlist=0
 find $RPM_BUILD_ROOT -depth -type d -exec rmdir {} 2>/dev/null \;
 
+#%{_fixperms} $RPM_BUILD_ROOT/*
+
 %check
 ./Build test
 
@@ -44,9 +44,9 @@ find $RPM_BUILD_ROOT -depth -type d -exec rmdir {} 2>/dev/null \;
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%manifest perl-Pod-Coverage.manifest
 %defattr(-,root,root,-)
 %doc Changes examples/
 %{_bindir}/*
 %{perl_vendorlib}/*
-#%doc %{_mandir}/man3/*
+%doc %{_mandir}/man3/*
+
